@@ -1,0 +1,77 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "obsidian-quickadd",
+  "title": "Obsidian QuickAdd",
+  "description": "Run Obsidian QuickAdd choices from Raycast.",
+  "icon": "icon.png",
+  "author": "gaoyang",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "platforms": [
+    "macOS"
+  ],
+  "commands": [
+    {
+      "name": "quickadd",
+      "title": "Search QuickAdd Choices",
+      "subtitle": "Obsidian",
+      "description": "Search and run QuickAdd choices across your Obsidian vaults.",
+      "mode": "view"
+    },
+    {
+      "name": "quickadd-with-text",
+      "title": "Send to QuickAdd",
+      "subtitle": "Obsidian",
+      "description": "Send text from Raycast Root Search to a QuickAdd choice.",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "text",
+          "type": "text",
+          "placeholder": "Text",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "vaultPath",
+      "title": "Vault Path",
+      "description": "Optional Obsidian vault directory. Its folder name is used as the vault name.",
+      "type": "directory",
+      "required": false
+    },
+    {
+      "name": "defaultVariableName",
+      "title": "Default Variable Name",
+      "description": "The QuickAdd variable name used in the URI parameter value-<name>.",
+      "type": "textfield",
+      "placeholder": "value",
+      "default": "value",
+      "required": false
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.96.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.0.4",
+    "@types/node": "^20.17.10",
+    "@types/react": "^19.0.2",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "dev": "ray develop",
+    "build": "ray build -e dist",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix",
+    "test": "tsx --test test/*.test.ts",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
